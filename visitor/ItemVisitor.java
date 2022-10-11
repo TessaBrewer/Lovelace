@@ -1,21 +1,8 @@
 package visitor;
 
-import products.impl.Hammer;
-import products.impl.Nails;
-import products.impl.Saw;
-import products.materials.ItemDecorator;
+import products.Item;
 
-public abstract class ItemVisitor {
-    public void visit(Hammer hammer) {
+public class ItemVisitor {
+    public void visit(Item i) {
     }
-    
-    public void visit(Nails nails) {
-    }
-    
-    public void visit(Saw saw) {
-    }
-    
-    public void visit(ItemDecorator id) {
-    }
-
 }

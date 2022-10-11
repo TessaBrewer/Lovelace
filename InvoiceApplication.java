@@ -5,9 +5,7 @@ import products.Bundle;
 import products.factories.HammerFactory;
 import products.factories.NailFactory;
 import products.factories.SawFactory;
-import visitor.NumberOfHammersCalculator;
-import visitor.NumberOfNailsCalculator;
-import visitor.NumberOfUnitsOfSteelCalculator;
+import visitor.CountingCalculator;
 import visitor.PriceCalculator;
 
 import java.text.SimpleDateFormat;
@@ -46,15 +44,15 @@ public class InvoiceApplication {
     String formattedInvoice = invoice.format(formatter);
 
     // Computer data for the Company
-    NumberOfHammersCalculator numHammersCalculator = new NumberOfHammersCalculator();
+    CountingCalculator numHammersCalculator = new CountingCalculator();
     invoice.accept(numHammersCalculator);
     long numberOfHammers = numHammersCalculator.getNumber();
 
-    NumberOfUnitsOfSteelCalculator steelUnitsCalculator = new NumberOfUnitsOfSteelCalculator();
+    CountingCalculator steelUnitsCalculator = new CountingCalculator();
     invoice.accept(steelUnitsCalculator);
     long numberOfUnitsOfSteelRequired =  steelUnitsCalculator.getNumber();
 
-    NumberOfNailsCalculator numNailsCalculator = new NumberOfNailsCalculator();
+    CountingCalculator numNailsCalculator = new CountingCalculator();
     invoice.accept(numNailsCalculator);
     long numberOfNailsDispensed = numNailsCalculator.getNumber();
 

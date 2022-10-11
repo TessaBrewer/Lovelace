@@ -1,11 +1,11 @@
 package visitor;
 
-import products.impl.Nails;
+import products.Item;
 
-public class NumberOfNailsCalculator extends ItemVisitor{
+public class CountingCalculator extends ItemVisitor {
 
     @Override
-    public void visit(Nails nails) {
+    public void visit(Item i) {
         number++;
     }
 
